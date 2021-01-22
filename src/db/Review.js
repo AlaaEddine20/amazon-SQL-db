@@ -13,6 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(5),
       required: true,
     },
+    productId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Product",
+        key: "id",
+      },
+    },
     createdAt: DataTypes.DATE,
   });
   Review.associate = (models) => {
